@@ -1,4 +1,9 @@
 export function main() {
+    const repaint = async () => {
+        for (let i = 0; i < 2; i++) {
+            await new Promise(resolve => requestAnimationFrame(resolve));
+        }
+    };
     const sessionId = document.querySelector('app-root').attributes[0].name.match(/_nghost-(.+?)-c0/u)[1];
     let selector = '', song = [], songElm = [], songs = [];
 
@@ -49,7 +54,7 @@ export function main() {
         selector = `#genretabs > ul > li:nth-child(${index}) > a`;
         const navLink = document.querySelector(selector);
         navLink.click();
-        console.log(index);
+        repaint();
 
         selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
         document.querySelectorAll(selector).forEach(li => {
