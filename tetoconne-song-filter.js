@@ -49,14 +49,7 @@ export function main() {
         selector = `#genretabs > ul > li:nth-child(${index}) > a`;
         const navLink = document.querySelector(selector);
         navLink.click();
-
-        d1 = new Date();
-            while (true) {
-            d2 = new Date();
-            if (d2 - d1 > 250) {
-                break;
-            }
-        }
+        console.log(index);
 
         selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
         document.querySelectorAll(selector).forEach(li => {
