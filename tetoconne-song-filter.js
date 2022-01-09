@@ -51,29 +51,31 @@ export function main() {
 
     const navLinkIndexes = Array.from(Array(7), (v, i) => (i + 1));
     navLinkIndexes.forEach(index => {
-        selector = `#genretabs > ul > li:nth-child(${index}) > a`;
-        const navLink = document.querySelector(selector);
-        navLink.click();
-        repaint();
+        (async () => {
+            selector = `#genretabs > ul > li:nth-child(${index}) > a`;
+            const navLink = document.querySelector(selector);
+            await repaint();
+            navLink.click();
 
-        selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
-        document.querySelectorAll(selector).forEach(li => {
-            songElm = [
-                li.querySelector('span.stage-name'),
-                li.querySelector('div#difficulty0'),
-                li.querySelector('div#difficulty1'),
-                li.querySelector('div#difficulty2')
-            ];
-            song = [
-                songElm[0] !== null ? songElm[0].innerText : '',
-                songElm[1] !== null ? `0000000${songElm[1].innerText}`.slice(-7) : '0000000',
-                songElm[2] !== null ? `0000000${songElm[2].innerText}`.slice(-7) : '0000000',
-                songElm[3] !== null ? `0000000${songElm[3].innerText}`.slice(-7) : '0000000'
-            ];
-            if (song[0] !== '楽曲名') {
-                songs.push(song);
-            }
-        });
+            selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
+            document.querySelectorAll(selector).forEach(li => {
+                songElm = [
+                    li.querySelector('span.stage-name'),
+                    li.querySelector('div#difficulty0'),
+                    li.querySelector('div#difficulty1'),
+                    li.querySelector('div#difficulty2')
+                ];
+                song = [
+                    songElm[0] !== null ? songElm[0].innerText : '',
+                    songElm[1] !== null ? `0000000${songElm[1].innerText}`.slice(-7) : '0000000',
+                    songElm[2] !== null ? `0000000${songElm[2].innerText}`.slice(-7) : '0000000',
+                    songElm[3] !== null ? `0000000${songElm[3].innerText}`.slice(-7) : '0000000'
+                ];
+                if (song[0] !== '楽曲名') {
+                    songs.push(song);
+                }
+            });
+        })();
     });
 
     selector = `#genretabs > ul > li:nth-child(1) > a`;
