@@ -1,4 +1,4 @@
-export function main() {
+function main() {
     const sessionId = document.querySelector('app-root').attributes[0].name.match(/_nghost-(.+?)-c0/u)[1];
     let selector = '', song = [], songElm = [], songs = [];
 
@@ -88,3 +88,5 @@ export function main() {
     });
     listGroup.innerHTML = insertHTML;
 };
+
+main();
