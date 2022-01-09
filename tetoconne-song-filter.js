@@ -50,7 +50,7 @@ export function main() {
         const navLink = document.querySelector(selector);
         navLink.click();
         
-        setInterval(() => {
+        setTimeout(() => {
             selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
             document.querySelectorAll(selector).forEach(li => {
                 songElm = [
