@@ -1,5 +1,5 @@
 function main() {
-    const sessionId = document.querySelector('app-root').attributes[0].name.match(/_nghost-(.+?)-c0/u)[1];
+    const sessionId = document.querySelector('app-root').attributes[0].name.match(/_nghost-(.+)-c0/u)[1];
     let selector = '', song = [], songElm = [], songs = [];
 
     const listGroupItem = [
