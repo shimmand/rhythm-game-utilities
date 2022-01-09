@@ -54,8 +54,8 @@ export function main() {
         (async () => {
             selector = `#genretabs > ul > li:nth-child(${index}) > a`;
             const navLink = document.querySelector(selector);
-            await repaint();
             navLink.click();
+            await repaint();
 
             selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
             document.querySelectorAll(selector).forEach(li => {
@@ -80,9 +80,6 @@ export function main() {
 
     selector = `#genretabs > ul > li:nth-child(1) > a`;
     document.querySelector(selector).click();
-
-    selector = '#genretabs > ul';
-    document.querySelector(selector).remove();
 
     selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul';
     const listGroup = document.querySelector(selector);
