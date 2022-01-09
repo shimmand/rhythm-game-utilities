@@ -50,23 +50,30 @@ function main() {
         const navLink = document.querySelector(selector);
         navLink.click();
 
-        selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
-        document.querySelectorAll(selector).forEach(li => {
-            songElm = [
-                li.querySelector('span.stage-name'),
-                li.querySelector('div#difficulty0'),
-                li.querySelector('div#difficulty1'),
-                li.querySelector('div#difficulty2')
-            ];
-            song = [
-                songElm[0] !== null ? songElm[0].innerText : '',
-                songElm[1] !== null ? `0000000${songElm[1].innerText}`.slice(-7) : '0000000',
-                songElm[2] !== null ? `0000000${songElm[2].innerText}`.slice(-7) : '0000000',
-                songElm[3] !== null ? `0000000${songElm[3].innerText}`.slice(-7) : '0000000'
-            ];
-            if (song[0] !== '楽曲名') {
-                songs.push(song);
-            }
+        selector = 'li.pagination-page > a';
+        const pageLinks = document.querySelectorAll(selector);
+        
+        pageLinks.forEach(link => {
+            link.click();
+            
+            selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
+            document.querySelectorAll(selector).forEach(li => {
+                songElm = [
+                    li.querySelector('span.stage-name'),
+                    li.querySelector('div#difficulty0'),
+                    li.querySelector('div#difficulty1'),
+                    li.querySelector('div#difficulty2')
+                ];
+                song = [
+                    songElm[0] !== null ? songElm[0].innerText : '',
+                    songElm[1] !== null ? `0000000${songElm[1].innerText}`.slice(-7) : '0000000',
+                    songElm[2] !== null ? `0000000${songElm[2].innerText}`.slice(-7) : '0000000',
+                    songElm[3] !== null ? `0000000${songElm[3].innerText}`.slice(-7) : '0000000'
+                ];
+                if (song[0] !== '楽曲名') {
+                    songs.push(song);
+                }
+            });
         });
     });
 
