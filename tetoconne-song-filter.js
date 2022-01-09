@@ -1,6 +1,6 @@
 export function main() {
     const sessionId = document.querySelector('app-root').attributes[0].name.match(/_nghost-(.+?)-c0/u)[1];
-    let selector = '', song = [], songElm = [], songs = [];
+    let selector = '', d1, d2, song = [], songElm = [], songs = [];
 
     const listGroupItem = [
         `<li _ngcontent-${sessionId}-c3 data-standard="_standard" data-expert="_expert" data-ultimate="_ultimate" class="list-group-item filter-target">`,
@@ -49,6 +49,14 @@ export function main() {
         selector = `#genretabs > ul > li:nth-child(${index}) > a`;
         const navLink = document.querySelector(selector);
         navLink.click();
+
+        d1 = new Date();
+            while (true) {
+            d2 = new Date();
+            if (d2 - d1 > 250) {
+                break;
+            }
+        }
 
         selector = '#maincontent > div.app-main-contents > ng-component > div.contentbox.clearfix > ul > li';
         document.querySelectorAll(selector).forEach(li => {
