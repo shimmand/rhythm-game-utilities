@@ -1,6 +1,6 @@
 export function main() {
     const sessionId = document.querySelector('app-root').attributes[0].name.match(/_nghost-(.+?)-c0/u)[1];
-    let selector = '', d1, d2, song = [], songElm = [], songs = [];
+    let selector = '', song = [], songElm = [], songs = [];
 
     const listGroupItem = [
         `<li _ngcontent-${sessionId}-c3 data-standard="_standard" data-expert="_expert" data-ultimate="_ultimate" class="list-group-item filter-target">`,
