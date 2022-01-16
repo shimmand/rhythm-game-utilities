@@ -1,0 +1,1 @@
+javascript:(function(){const path = 'https://shimmand.github.io/rhythm-game-utilities/tetoconne-chart-filter-sample.js'; const element = document.createElement("script"); element.src = path; document.body.appendChild(element);})();
