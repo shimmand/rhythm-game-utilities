@@ -176,7 +176,7 @@ function main() {
         `    <span _ngcontent-custom-c3="" class="scores">`,
         `        <div>`,
         `            <app-difficulty-name _ngcontent-custom-c3="" id="order">`,
-        `                <input type="radio" id="order-default" name="input-order" value="order-default" onclick="applyDefaultOrder();">`,
+        `                <input type="radio" id="order-default" name="input-order" value="order-default" onclick="applyDefaultOrder();" checked>`,
         `                <label for="order-default">デフォルト</label>`,
         `                <input type="radio" id="order-ascend" name="input-order" value="order-ascend" onclick="applyFilter(0);">`,
         `                <label for="order-ascend">スコア昇順</label>`,
