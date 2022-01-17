@@ -269,6 +269,9 @@ function main() {
     
     selector = '#genretabs > ul';
     document.querySelector(selector).remove(); 
+
+    selector = 'ul.pagination';
+    document.querySelector(selector).remove();
 };
 
 main();
