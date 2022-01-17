@@ -4,7 +4,7 @@ function main() {
             position: relative;
             background-color: rgba(255, 255, 255, .7);
         }
-
+        
         .list-group-item[_ngcontent-custom-c3] {
             position: relative;
             display: inline-block;
@@ -14,7 +14,7 @@ function main() {
             box-shadow: 0 0 5px #32acff;
             background-color: rgba(255, 255, 255, .7);
         }
-
+        
         .stage-name[_ngcontent-custom-c3] {
             position: relative;
             color: #626262;
@@ -23,29 +23,29 @@ function main() {
             font-weight: bolder;
             margin: .5rem 0;
         }
-
+        
         .scores[_ngcontent-custom-c3] {
             display: inline-block;
             position: relative;
             text-align: center;
             height: 1em;
         }
-
+        
         #difficulty0[_ngcontent-custom-c3] {
             color: #3682e4;
             display: inline-block;
         }
-
+        
         #difficulty1[_ngcontent-custom-c3] {
             color: #ec4545;
             display: inline-block;
         }
-
+        
         #difficulty2[_ngcontent-custom-c3] {
             color: #a034fe;
             display: inline-block;
         }
-
+        
         .break[_ngcontent-custom-c3], .empty[_ngcontent-custom-c3] {
             display: inline-block;
             padding: 0 .5rem;
@@ -119,7 +119,7 @@ function main() {
             applyDefaultOrder();
             document.querySelector('[name=input-filter]:checked').click();
         }
-
+        
         function openHelpPage() {
             window.open('https://shimmand.github.io/rhythm-game-utilities/tetoconne-chart-filter.html');
         }`
